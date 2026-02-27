@@ -1,0 +1,96 @@
+/* Estilo Minimalista para Hyprland + NVIDIA */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(17, 24, 39, 0.85); /* Dark background with transparency */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-bottom: 2px solid rgba(51, 204, 255, 0.3);
+}
+
+/* Modulos individuais em formato de 'pílula' */
+#workspaces, #clock, #cpu, #memory, #battery, #network, #pulseaudio, #tray, #window {
+    background: rgba(31, 41, 55, 0.7);
+    padding: 0px 15px;
+    margin: 4px 4px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Destaque para Workspaces */
+#workspaces button {
+    padding: 0 5px;
+    color: #9ca3af;
+}
+
+#workspaces button.active {
+    color: #33ccff;
+    border-bottom: 2px solid #33ccff;
+}
+
+#workspaces button.urgent {
+    color: #f87171;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+/* Cores específicas para informações críticas */
+#clock {
+    color: #33ccff; /* Cyan */
+    font-weight: bold;
+}
+
+#battery.charging {
+    color: #00ff99; /* Green */
+}
+
+#battery.critical:not(.charging) {
+    color: #f87171;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f87171;
+        color: #ffffff;
+    }
+}
+
+#cpu {
+    color: #a78bfa;
+}
+
+#memory {
+    color: #f472b6;
+}
+
+#network {
+    color: #fbbf24;
+}
+
+#pulseaudio {
+    color: #00ff99;
+}
+
+#window {
+    background: transparent;
+    border: none;
+    font-style: italic;
+    color: #d1d5db;
+}
