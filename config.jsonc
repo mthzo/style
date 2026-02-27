@@ -21,44 +21,51 @@
         "battery",
         "tray"
     ],
+
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "active": "",
-            "default": ""
+            "1": "󰈹",
+            "2": "󰅩",
+            "3": "󰄛",
+            "4": "󰓇",
+            "5": "󰙯",
+            "urgent": "󰀨",
+            "active": "󰄯",
+            "default": "󰄰"
         }
     },
+
     "hyprland/window": {
-        "format": "{title}",
-        "separate-outputs": true
+        "format": "󱂬 {title}",
+        "separate-outputs": true,
+        "max-length": 40
     },
+
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
+
     "clock": {
-        "format": " {:%H:%M   %d/%m}",
+        /* Ícones 󱑒 (Relógio) e 󰃭 (Calendário) para Nerd Font v3 */
+        "format": "󱑒 {:%H:%M  󰃭 %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
+
     "cpu": {
         "interval": 10,
-        "format": " {usage}%",
-        "max-length": 10
+        "format": "󰻠 {usage}%"
     },
+
     "memory": {
         "interval": 30,
-        "format": " {used:0.1f}G",
-        "max-length": 10
+        "format": "󰍛 {used:0.1f}G"
     },
+
     "battery": {
         "states": {
             "good": 95,
@@ -66,28 +73,28 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        /* Sequência de ícones de bateria corrigida */
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
+
     "network": {
-        "format-wifi": " {essid}",
-        "format-ethernet": " {ifname}",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "⚠ Disconnected",
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-linked": "󰈀 {ifname} (Sem IP)",
+        "format-disconnected": "󰖪 Desconectado",
         "on-click": "nm-connection-editor"
     },
+
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": " Muted",
+        "format-muted": "󰝟 Mudo",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol"
     }
